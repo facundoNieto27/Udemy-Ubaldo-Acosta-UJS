@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    
+    <body>
+        
+        <h1>
+        Aplicacion Calculadora
+        </h1>
+
+        <form>
+
+            <div>Operando A</div>
+            
+            <input id="operandoA" type="text" placeholder="Ingrese primer valor">
+            
+            <div>Operando B </div>
+            
+            <input id="operandoB" type="text" placeholder="Ingrese segundo operando">
+            
+            <br><br>
+            
+            <button type="button">SUMAR</button>
+            
+            <div id="resultado"></div>
+        </form>
+        
+        
+        <script>
+            function sumar(){
+                let a = parseInt(document.getElementById('operandoA').value);
+                let b = parseInt(document.getElementById('operandoB').value);
+                resultado = a + b;
+                if ( isNaN(resultado) )
+                    resultado = 'La suma no es valida'
+                document.getElementById('resultado').innerHTML = 'el resultado de la suma es: ' + resultado
+            }
+
+            document.getElementsByTagName('button')[0].addEventListener('click', sumar)
+
+            //puedo ahorrarme la linea 43 con tan solo poner en la etiqueta button la propiedad 'onclick="sumar()"' 
+            //pero me gusta mas tener limpio el html.
+
+
+
+            //MI PRIMER SOLUCION
+            //document.getElementsByTagName('button')[0].addEventListener('click', function() {
+            //    let a = parseInt(document.getElementById('operandoA').value);
+            //    let b = parseInt(document.getElementById('operandoB').value);
+            //    suma(a, b);
+            //});
+            //
+            //function suma(a, b) {
+            //    let resultado = a + b;
+            //    if (isNaN(resultado)) {
+            //        document.getElementById('resultado').innerHTML = "La suma no es valida";
+            //    } else {
+            //        document.getElementById('resultado').innerHTML = "el resultado de la suma es " + resultado;
+            //    }
+            //    return resultado;
+            //}
+       </script>
+    </body>
+</html>
